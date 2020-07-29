@@ -1,4 +1,7 @@
-# Simple calculator app with React.
+# Simple calculator app made with with React.
 
-How to Run:
+![](https://github.com/faultyagatha/calculator/blob/master/images/img.png)
+
+
+[How to Run](https://github.com/faultyagatha/calculator/tree/master/calculator)
 
