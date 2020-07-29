@@ -13,8 +13,8 @@ export default class App extends React.Component
     super();
 
     this.state = {
-      operandOne: 0,
-      operandTwo: 0,
+      operandOne: '',
+      operandTwo: '',
       result: 'Result',
       lastOperation: 'Last Operation'
     };
@@ -26,9 +26,8 @@ export default class App extends React.Component
     if (!isValid) return; //return early if invalid
 
     let result = 0;
-    // debugger;
     switch (e) 
-    { //TODO: round float numbers
+    {
       case "+":
         result = (parseFloat(this.state.operandOne) + parseFloat(this.state.operandTwo));
         break;
@@ -39,23 +38,17 @@ export default class App extends React.Component
         result = (parseFloat(this.state.operandOne) * parseFloat(this.state.operandTwo));
         break;
       case "/":
-        if (this.state.operandTwo === '0') return; 
+        if (this.state.operandTwo === '0' || this.state.operandTwo === '0.') return; //prevent NaN when 0/0
         result = parseFloat(this.state.operandOne) / parseFloat(this.state.operandTwo);
-        result = Math.floor(result * 100) / 100; //round to two decimals
         break;
-      case "C":
-        // result = 0;
-        this.reset(); //TODO: fix reset
-        break;
-      default: this.reset();
     }
+      result = Math.floor(result * 100) / 100; //round to two decimals
       this.setState({ result });
       this.displayLastOperation(e);
   };
 
   displayLastOperation = (e) => 
   {
-    if (e === 'C') return;
     let lastOperation = String(
         this.state.operandOne + e + this.state.operandTwo
       );
@@ -64,7 +57,6 @@ export default class App extends React.Component
 
   validateInput = () => 
   {
-    // debugger;
     if (this.state.operandOne === '' || this.state.operandTwo === '') 
     {
       window.alert('Please enter numbers first'); //not sure it's a good idea
@@ -72,21 +64,11 @@ export default class App extends React.Component
     }
     if (isNaN(this.state.operandOne) || isNaN(this.state.operandTwo)) 
     {
-      this.reset();
       window.alert('Please enter a valid number'); //not sure it's a good idea
       return false;
     }
-    return true;
-  };
 
-  reset = () => 
-  {
-    this.setState({
-      operandOne: 0,
-      operandTwo: 0,
-      result: 'Result',
-      lastOperation: 'Last Operation'
-    });
+    return true;
   };
 
   render = () => 
@@ -94,9 +76,13 @@ export default class App extends React.Component
     return (
       <div className="App">
         <h1 className="Text">CALCULATOR</h1>
-        <Operand onChange={e => this.setState({ operandOne: e })} />
+        <div className="Operand1">
+          <Operand onChange={e => this.setState({ operandOne: e })} />
+        </div>
         <Operator onClick={this.onOperatorClick} />
-        <Operand onChange={e => this.setState({ operandTwo: e })} />
+        <div className="Operand2">
+          <Operand onChange={e => this.setState({ operandTwo: e })} />
+        </div>
         <LastOperation lastOperation={this.state.lastOperation} />
         <Result result={this.state.result} />
       </div>

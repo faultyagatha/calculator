@@ -1,4 +1,4 @@
-/** read-only display component that shows a last operation */
+/** read-only display component that shows a last valid operation */
 
 import React from 'react';
 

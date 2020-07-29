@@ -1,3 +1,5 @@
+/** input component, default '' */
+
 import React from 'react';
 
 export default class Operand extends React.Component 
@@ -5,7 +7,7 @@ export default class Operand extends React.Component
     render = () => 
     {
         return (
-            <div className="Operand">
+            <div>
                 <input
                     className="Input"
                     type="text"

@@ -1,4 +1,4 @@
-/** read-only component */
+/** read-only component displaying current result */
 
 import React from 'react';
 

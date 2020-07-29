@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap'); */
+
 body {
   background: #ffffff;
   display: flex;
@@ -9,8 +12,10 @@ body {
 
 .App {
   text-align: center;
+  font-family: 'Rajdhani', sans-serif;
   background: #f0ece8;
   border: 5px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
   top: 50%;
   left: 50%;
   width: 400px;
@@ -18,10 +23,9 @@ body {
   display: grid;
   grid-template-columns: 10px 100px auto 100px 10px;
   grid-template-rows: 10% 30% 30% 30%;
-  /* justify-items: center; */
 }
 
-.Operand {
+.Operand1 {
   background: #48A9A6;
   display: flex;
   border: 5px solid rgba(0, 0, 0, 0.05);
@@ -29,17 +33,30 @@ body {
   height: 90%;
   width: 90%;
   grid-column: 2;
-  /* grid-row: 2; */
+}
+
+.Operand2 {
+  background: #48A9A6;
+  display: flex;
+  border: 5px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  height: 90%;
+  width: 90%;
+  grid-column: 4;
 }
 
 .Input {
-  background: #489d9adb;
+  background: #489d9ac8;
   color: white;
   border: 5px solid rgba(0, 0, 0, 0.05);
-  text-align: center;
+  border-radius: 6px;
   height: 90%;
-  width: 100%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: 24px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .Operator {
@@ -50,7 +67,8 @@ body {
   border-radius: 6px;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 50%;
+  height: 50%;
   font-size: 24px;
 }
 
@@ -60,11 +78,10 @@ body {
 
 .Operators {
   display: flex;
-  /* align-content: space-around; */
   flex-wrap: wrap;
-  flex-direction: raw;
+  flex-direction: column;
   justify-self: center;
-  height: 80%;
+  height: 90%;
   width: 90%;
   grid-column: 3;
   grid-row: 2;
@@ -77,7 +94,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-self: center;
-  height: 90%;
+  height: 80%;
   width: 90%;
   font-size: 24px;
   border: 2px solid rgba(0, 0, 0, 0.05);
@@ -93,7 +110,7 @@ body {
   justify-content: center;
   justify-self: center;
   align-items: center;
-  height: 90%;
+  height: 80%;
   width: 90%;
   font-size: 24px;
   border: 2px solid rgba(0, 0, 0, 0.05);
@@ -108,11 +125,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 ::placeholder {
   color: rgb(199, 198, 198);
+  font-family: 'Rajdhani', sans-serif;
   font-size: 24px;
   opacity: 1; 
 }
