@@ -50,7 +50,7 @@ export default class App extends React.Component
   displayLastOperation = (e) => 
   {
     let lastOperation = String(
-        this.state.operandOne + e + this.state.operandTwo
+      this.state.operandOne + ' ' + e + ' ' + this.state.operandTwo
       );
       this.setState({ lastOperation: lastOperation });
   };
