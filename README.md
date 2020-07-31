@@ -1,4 +1,4 @@
-# Simple calculator app made with with React.
+# Simple calculator app made with React.
 
 ![](https://github.com/faultyagatha/calculator/blob/master/images/img.png)
 
